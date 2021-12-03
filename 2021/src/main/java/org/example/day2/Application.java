@@ -11,7 +11,7 @@ public class Application {
 
     public static void main(String[] args) throws URISyntaxException, IOException {
         FileReader fileReader = new FileReader();
-        fileReader.printFileToConsole("day2/banner.txt");
+        fileReader.printFileToConsole("banner.txt");
         List<String> instructions = fileReader.readFileLines(INSTRUCTIONS_FILE_LOCATION);
 
         Submarine submarine = new Submarine();
