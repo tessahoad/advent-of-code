@@ -9,10 +9,7 @@ public class Application {
     public static final String FILE_LOCATION = "day6/input.txt";
 
     public static void main(String[] args) throws Exception {
-        FileReader fileReader = new FileReader();
-        fileReader.printFileToConsole("banner.txt");
-
-        System.out.println("Fishes " + fishAfterDays(256));
+        System.out.println("Fishes :" + fishAfterDays(256));
     }
 
     public static long fishAfterDays(int days) throws Exception {
@@ -43,7 +40,7 @@ public class Application {
             fishAtAges = nextDayAges;
         }
 
-        return fishAtAges.values().stream().mapToLong(l -> l).sum();
+        return fishAtAges.values().stream().reduce(0L, Long::sum);
     }
 
     private static Map<String, Long> initialiseFishMap() {
